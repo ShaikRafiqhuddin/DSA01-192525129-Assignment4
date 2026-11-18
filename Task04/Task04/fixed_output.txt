@@ -1,8 +1,0 @@
-3.5
-4
-~Account
-~SeniorAccount (history released)
-~Account
-ref.rate() = 4
-~SeniorAccount (history released)
-~Account
