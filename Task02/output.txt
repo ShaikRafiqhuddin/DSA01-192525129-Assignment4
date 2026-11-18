@@ -1,0 +1,7 @@
+TeachingAssistant: Asha (ID 5001, phone 98400-11111) | programme B.Tech CSE, CGPA 9.1 | dept CSE, salary 18000
+ResearchScholar:   Vikram (ID 5002, phone 98400-22222) | programme B.Tech CSE, CGPA 8.7 | fellowship CSIR-JRF
+
+sizeof(Person)               = 80 bytes
+sizeof(Student)              = 128 bytes
+sizeof(TeachingAssistant)    = 176 bytes  (one shared Person sub-object)
+sizeof(TeachingAssistantC)   = 240 bytes  (composition: two Person sub-objects)
