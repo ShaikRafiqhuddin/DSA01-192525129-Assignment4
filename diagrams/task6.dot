@@ -1,0 +1,13 @@
+digraph T6 {
+  rankdir=TB; bgcolor="white";
+  node [shape=record, fontname="Helvetica", fontsize=11, style=filled, fillcolor="#f4f8ff"];
+  edge [arrowhead=empty, arrowtail=empty, dir=back];
+  Vehicle [label="{Vehicle\n(abstract)|# regNo: string\l# dailyRate: double\l# rented: bool\l|+ charge(days) = 0\l+ rent(days)\l+ giveBack(actualDays)\l}"];
+  Bicycle [label="{Bicycle|+ charge() override\l}"];
+  Motor [label="{MotorVehicle\n(abstract)|# fuelLevel: double\l# serviceDue: string\l}"];
+  TW [label="{TwoWheeler|+ charge() override\l}"];
+  Car [label="{Car|# seats: int\l|+ charge() override\l}"];
+  EC [label="{ElectricCar|- batteryKWh: double\l- pricePerKWh: double\l|+ charge() override\l}"];
+  EB [label="{ElectricBus\n(new type, added later)|- batteryKWh: double\l- pricePerKWh: double\l|+ charge() override\l}", fillcolor="#eaffe4"];
+  Vehicle -> Bicycle; Vehicle -> Motor; Motor -> TW; Motor -> Car; Car -> EC; Vehicle -> EB;
+}
