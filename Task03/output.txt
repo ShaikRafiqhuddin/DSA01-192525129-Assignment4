@@ -1,0 +1,53 @@
+--- construct Student ---
+Address(Salem) Person(Kavya) Course(DSA0120) Student(192311001) 
+--- destruct Student ---
+~Student(192311001) ~Course ~Person(Kavya) ~Address 
+--- construct Staff ---
+Address(Chennai) Person(Rajan) Staff(55000) 
+--- destruct Staff ---
+~Staff ~Person(Rajan) ~Address 
+--- construct TeachingAssistant ---
+Address(Madurai) Person(Asha) Course(DSA0120) Student(192311045) Staff(18000) TA 
+--- destruct TeachingAssistant ---
+~TA ~Staff ~Student(192311045) ~Course ~Person(Asha) ~Address 
+
+sizeof(TeachingAssistant) with virtual bases = 160 bytes (one shared Person sub-object)
+
+--- construct Student ---
+Address(Salem) Person(Kavya) Course(DSA0120) Student(192311001) 
+--- destruct Student ---
+~Student(192311001) ~Course ~Person(Kavya) ~Address 
+--- construct Staff ---
+Address(Chennai) Person(Rajan) Staff(55000) 
+--- destruct Staff ---
+~Staff ~Person(Rajan) ~Address 
+--- construct TeachingAssistant ---
+Address(Madurai) Person(Asha) Course(DSA0120) Student(192311045) Address(Madurai) Person(Asha) Staff(18000) TA 
+--- destruct TeachingAssistant ---
+~TA ~Staff ~Person(Asha) ~Address ~Student(192311045) ~Course ~Person(Asha) ~Address 
+
+sizeof(TeachingAssistant) without virtual bases = 232 bytes (two Person sub-objects)
+
+192311001 Kavya (19) Salem-636001
+Vehicle Engine Car | ~Car ~Engine ~Vehicle 
+192311001 Kavya (19) Salem-636001
+Task03/task3_swapped.cpp: In constructor 'Student::Student(const string&, int, long long int, const string&, int)':
+Task03/task3_swapped.cpp:24:13: warning: 'Student::home' will be initialized after [-Wreorder]
+   24 |     Address home;
+      |             ^~~~
+Task03/task3_swapped.cpp:23:15: warning:   'long long int Student::regNo' [-Wreorder]
+   23 |     long long regNo;
+      |               ^~~~~
+Task03/task3_swapped.cpp:27:5: warning:   when initialized here [-Wreorder]
+   27 |     Student(const std::string& n, int a, long long r, const std::string& c, int p)
+      |     ^~~~~~~
+Task03/task3_swapped.cpp: In constructor 'Student::Student(const string&, int, long long int, const string&, int)':
+Task03/task3_swapped.cpp:24:13: warning: 'Student::home' will be initialized after [-Wreorder]
+   24 |     Address home;
+      |             ^~~~
+Task03/task3_swapped.cpp:23:15: warning:   'long long int Student::regNo' [-Wreorder]
+   23 |     long long regNo;
+      |               ^~~~~
+Task03/task3_swapped.cpp:27:5: warning:   when initialized here [-Wreorder]
+   27 |     Student(const std::string& n, int a, long long r, const std::string& c, int p)
+      |     ^~~~~~~
