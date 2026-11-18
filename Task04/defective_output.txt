@@ -1,0 +1,8 @@
+3.5
+3.5
+~Account
+~Account
+~SeniorAccount (history released)
+~Account
+copy.rate() = 3.5
+~Account
