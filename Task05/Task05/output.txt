@@ -1,0 +1,6 @@
+(a) direct object:       items=2 total=162.00
+(b) pointer with ->:     items=2 total=225.00
+(c) reference alias:     items=3 total=207.00
+(d) new/delete pointer:  items=2 total=70.00
+
+Active carts (array of pointers): highest total is cart 1 with 275.00
