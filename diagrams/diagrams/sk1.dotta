@@ -1,0 +1,11 @@
+digraph T1 {
+  rankdir=TB; bgcolor="white";
+  node [shape=record, fontname="Helvetica", fontsize=11, style=filled, fillcolor="#f4f8ff"];
+  edge [arrowhead=empty, arrowtail=empty, dir=back];
+  Employee [label="{Employee\n(abstract)|# name: string\l# id: int\l|+ pay() = 0\l+ category() = 0\l+ ~Employee() virtual\l}"];
+  Salaried [label="{SalariedEmployee|# basic: double\l# DA_RATE = 0.42\l|+ pay() override\l}"];
+  Prof [label="{Professor|- research: double\l|+ pay() override\l+ category() override\l}"];
+  Lab [label="{LabAssistant||+ category() override\l}"];
+  Guest [label="{GuestFaculty|- hours: double\l- rate: double\l|+ pay() override\l+ category() override\l}"];
+  Employee -> Salaried; Salaried -> Prof; Salaried -> Lab; Employee -> Guest;
+}
