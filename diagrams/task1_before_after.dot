@@ -1,0 +1,7 @@
+digraph {
+rankdir=LR; bgcolor="white"; pad=.2; nodesep=.4;
+node [shape=box,style="rounded,filled",fontname="DejaVu Sans",fontsize=17,margin=".2,.18"];
+a [fillcolor="#FBEDED",color="#C46A6A",label="BEFORE: duplicated design\l\lProfessor, LabAssistant, GuestFaculty\lrepeat identity fields in every class\l\l0.42 salary rule written twice\lNo base type for a common loop\l"];
+b [fillcolor="#EEF3FA",color="#1F3864",label="AFTER: responsibilities separated\l\lEmployee owns name + id\lSalariedEmployee owns salary + DA_RATE\lProfessor adds research pay\lGuestFaculty owns its hourly rule\l\lEmployee* supports one payroll loop\l"];
+a -> b [label="  repair  ",fontname="DejaVu Sans",fontsize=16,color="#1F3864",penwidth=2];
+}
