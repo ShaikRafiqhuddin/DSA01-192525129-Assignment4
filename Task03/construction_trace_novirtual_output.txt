@@ -1,0 +1,14 @@
+--- construct Student ---
+Address(Salem) Person(Kavya) Course(DSA0120) Student(192311001) 
+--- destruct Student ---
+~Student(192311001) ~Course ~Person(Kavya) ~Address 
+--- construct Staff ---
+Address(Chennai) Person(Rajan) Staff(55000) 
+--- destruct Staff ---
+~Staff ~Person(Rajan) ~Address 
+--- construct TeachingAssistant ---
+Address(Madurai) Person(Asha) Course(DSA0120) Student(192311045) Address(Madurai) Person(Asha) Staff(18000) TA 
+--- destruct TeachingAssistant ---
+~TA ~Staff ~Person(Asha) ~Address ~Student(192311045) ~Course ~Person(Asha) ~Address 
+
+sizeof(TeachingAssistant) without virtual bases = 232 bytes (two Person sub-objects)
